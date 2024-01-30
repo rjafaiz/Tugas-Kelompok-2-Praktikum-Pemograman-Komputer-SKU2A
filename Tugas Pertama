@@ -1,0 +1,106 @@
+Anggota : 
+1. M. Raja Faiz
+2. M. Rasyad Aqila Faza
+3. M. Akbar Wida
+4. M. Hilal Albar Reinhard
+5. Moh. Arief Akbar
+6. Faiz Arkam Bustomi
+7. M. Daffa Zaidan
+8. Harcel Bryuan Felito
+
+**1. Buat sebuah program dengan method bernama getTotal yang menerima dua bilangan bulat sebagai argumen dan mengembalikan jumlahnya. Panggil metode ini dari main() dan cetak hasilnya.**
+= 
+public class Kelompok2 {
+    static int getTotal(int x, int y){
+        return x + y;
+    }
+
+    public static void main(String[] args) {
+        int z = getTotal(33, 36);
+        System.out.println(z);
+    }
+}
+
+
+**2. Buat method bernama isEven yang menerima argumen int. Metode harus mengembalikan nilai benar jika argumennya genap, atau salah jika sebaliknya. Tulis juga program untuk menguji metode Anda.**
+=
+public class Kelompok2 {
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+
+    public static void main(String[] args) {
+        int angka1 = 99;
+
+        if (isEven(angka1)) {
+            System.out.println(angka1 + " adalah bilangan genap");
+        } else {
+            System.out.println(angka1 + " bukan bilangan genap");
+        }
+    }
+
+}
+
+
+**3. Buat metode pengembalian nilai, isVowel yang mengembalikan nilai benar jika karakter tertentu adalah vokal, dan sebaliknya mengembalikan nilai salah. Dalam metode main(), terima string dari pengguna dan hitung jumlah vokal dalam string itu.**
+=
+import java.util.Scanner;
+
+public class Kelompok2 {
+    
+    public static boolean isVowel(char ch) {
+        char lowercaseChar = Character.toLowerCase(ch);
+        
+        return lowercaseChar == 'a' || lowercaseChar == 'e' || lowercaseChar == 'i' || lowercaseChar == 'o' || lowercaseChar == 'u';
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan sebuah string: ");
+        String inputString = scanner.nextLine();
+
+        int vowelCount = 0;
+
+        for (int i = 0; i < inputString.length(); i++) {
+            char currentChar = inputString.charAt(i);
+
+            if (isVowel(currentChar)) {
+                vowelCount++;
+            }
+        }
+
+        System.out.println("Jumlah vokal dalam string adalah: " + vowelCount);
+
+        scanner.close();
+    }
+}
+
+
+**4. Bilangan prima adalah bilangan yang hanya habis dibagi oleh dirinya sendiri dan 1. Misalnya bilangan 5 adalah bilangan prima karena hanya dapat dibagi rata oleh 1 dan 5. Namun bilangan 6 bukan bilangan prima karena dapat dibagi merata sebesar 1, 2, 4, dan 6.
+Buat method bernama isPrime, yang menggunakan bilangan bulat sebagai argumen dan mengembalikan nilai true jika argumennya adalah bilangan prima, atau false jika sebaliknya. Buat juga method main yang menampilkan bilangan prima antara 1 sampai 500.**
+=
+public class Kelompok2 {
+    
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    public static void main(String[] args) {
+        for (int i = 1; i <= 500; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+}
